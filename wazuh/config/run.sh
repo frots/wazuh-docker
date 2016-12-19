@@ -93,7 +93,7 @@ then
   /var/ossec/bin/ossec-authd -p 1515 -g ossec $AUTHD_OPTIONS >/dev/null 2>&1 &
   AUTHD_PID=$!
 fi
-sleep 15 # give ossec a reasonable amount of time to start before checking status
+sleep 3 # give ossec a reasonable amount of time to start before checking status
 LAST_OK_DATE=`date +%s`
 
 ## Update rules and decoders with Wazuh Ruleset
