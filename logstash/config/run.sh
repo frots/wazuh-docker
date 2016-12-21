@@ -27,4 +27,4 @@ exec "$@"
 
 #echo "Wait one min to logstash restart"
 #sleep 60
-#curl -XPUT -v -H "Expect:"  "http://elasticsearch:9200/_template/ossec" -d@/etc/logstash/elastic5-ossec-template.json
+#curl -XPUT -v -H "Expect:"  "http://elasticsearch:9200/_template/wazuh" -d@/etc/logstash/wazuh-elastic5-template.json

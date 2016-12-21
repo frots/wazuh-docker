@@ -1,11 +1,18 @@
 FROM milcom/centos7-systemd
 
 RUN rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
+ADD config/elastic.repo /etc/yum.repos.d/elastic.repo
 
 RUN yum -y update; yum clean all;
 RUN yum -y install epel-release openssl useradd; yum clean all
 
 
+RUN yum -y install filebeat
+
+COPY config/filebeat.yml /etc/filebeat/filebeat.yml
+
+RUN chkconfig --add filebeat
+RUN /usr/share/filebeat/bin/filebeat -c /etc/filebeat/filebeat.yml &
 
 RUN yum -y install wget
 RUN yum -y install vim expect gcc make openssl-devel unzip
