@@ -11,7 +11,7 @@ until curl -XGET $host:9200; do
   sleep 1
 done
 
-sleep 60
+sleep 5
 
 >&2 echo "Elastic is up - executing command"
 exec $cmd

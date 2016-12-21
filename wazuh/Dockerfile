@@ -12,7 +12,6 @@ RUN yum -y install filebeat
 COPY config/filebeat.yml /etc/filebeat/filebeat.yml
 
 RUN chkconfig --add filebeat
-RUN /usr/share/filebeat/bin/filebeat -c /etc/filebeat/filebeat.yml &
 
 RUN yum -y install wget
 RUN yum -y install vim expect gcc make openssl-devel unzip

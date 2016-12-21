@@ -99,6 +99,7 @@ LAST_OK_DATE=`date +%s`
 ## Update rules and decoders with Wazuh Ruleset
 #cd /var/ossec/update/ruleset && python ossec_ruleset.py
 
+/usr/share/filebeat/bin/filebeat -c /etc/filebeat/filebeat.yml &
 /bin/node /var/ossec/api/app.js &
 /var/ossec/bin/ossec-control restart
 
